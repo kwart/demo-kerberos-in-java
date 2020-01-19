@@ -1,1 +1,1 @@
-# demo-kerberos-in-java
+# Kerberos in Java - demo
