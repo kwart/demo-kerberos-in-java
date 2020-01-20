@@ -8,7 +8,10 @@ import javax.security.auth.login.LoginContext;
 
 import org.apache.kerby.asn1.Asn1;
 
-public class InteractiveAuthenticationMain {
+/**
+ * KDC has to be running for this authentication. KerberosTicket is available in the JAAS Subject after authentication. 
+ */
+public class InteractiveInitiatorAuthenticationMain {
 
     public static void main(String[] args) throws Exception {
         System.setProperty("sun.security.krb5.debug", "true");
