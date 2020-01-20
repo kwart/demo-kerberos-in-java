@@ -1,4 +1,4 @@
-package cz.cacek.test;
+package cz.cacek.kerby.jaas;
 
 import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;

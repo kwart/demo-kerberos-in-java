@@ -1,4 +1,4 @@
-package cz.cacek.test;
+package cz.cacek.kerby.kdc;
 
 import java.io.File;
 
@@ -20,7 +20,8 @@ public class KerbyServerMain {
 
         kdc.createPrincipal("jduke", "theduke");
         kdc.createPrincipal("hnelson", "secret");
-        kdc.createAndExportPrincipals(new File("/tmp/http.keytab"), "HTTP/localhost");
+        kdc.createPrincipal("HTTP/localhost");
+        kdc.exportPrincipal("HTTP/localhost", new File("/tmp/http.keytab"));
 
         kdc.start();
         System.out.println("Kerberos server has started.");
