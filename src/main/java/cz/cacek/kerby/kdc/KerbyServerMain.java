@@ -16,12 +16,18 @@ public class KerbyServerMain {
         kdc.setKdcHost("localhost");
         kdc.setKdcRealm("TEST.REALM");
         kdc.setKdcPort(10088);
+        // kdc.getKdcConfig().setBoolean(org.apache.kerby.kerberos.kerb.server.KdcConfigKey.PREAUTH_REQUIRED, false);
         kdc.init();
 
         kdc.createPrincipal("jduke", "theduke");
         kdc.createPrincipal("hnelson", "secret");
-        kdc.createPrincipal("HTTP/localhost");
-        kdc.exportPrincipal("HTTP/localhost", new File("/tmp/http.keytab"));
+        kdc.createPrincipal("HTTP/localhost", "SpN-eGo");
+
+        // export service principal's keytab
+        File httpKeytabFile = new File("http.keytab");
+        if (!httpKeytabFile.exists()) {
+            kdc.exportPrincipal("HTTP/localhost", httpKeytabFile);
+        }
 
         kdc.start();
         System.out.println("Kerberos server has started.");
