@@ -17,8 +17,8 @@ import javax.security.auth.login.LoginException;
 import org.apache.kerby.kerberos.kerb.KrbException;
 import org.junit.Test;
 
-import cz.cacek.kerby.jaas.NamePasswordCbHandler;
-import cz.cacek.kerby.kdc.KerbyServerMain;
+import cz.cacek.kerberos.jaas.NamePasswordCbHandler;
+import cz.cacek.kerberos.kdc.KerbyServerMain;
 
 /**
  * A test template.
