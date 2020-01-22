@@ -15,6 +15,9 @@ import org.ietf.jgss.GSSException;
 import org.ietf.jgss.GSSManager;
 import org.ietf.jgss.MessageProp;
 
+/**
+ * Sample echo server with GSS-API protection.
+ */
 public class GSSTestServer {
 
     public static void main(String[] args) throws Exception {

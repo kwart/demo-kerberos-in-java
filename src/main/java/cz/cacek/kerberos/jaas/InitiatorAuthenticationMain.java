@@ -14,7 +14,7 @@ import org.apache.kerby.asn1.Asn1;
  * <p>
  * KDC has to be available/reachable for the authentication.
  */
-public class InteractiveInitiatorAuthenticationMain {
+public class InitiatorAuthenticationMain {
 
     public static void main(String[] args) throws Exception {
         System.setProperty("sun.security.krb5.debug", "true");

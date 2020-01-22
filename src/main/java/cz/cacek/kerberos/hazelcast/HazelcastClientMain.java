@@ -16,7 +16,7 @@ import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.security.SimpleTokenCredentials;
 
 /**
- * Sample GSS-API/Kerberos authentication in Hazelcast Enterprise.
+ * Sample GSS-API/Kerberos client authentication in Hazelcast Enterprise.
  * <p>
  * KDC has to be available/reachable for the authentication.
  */
