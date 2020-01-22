@@ -14,7 +14,7 @@ Package: `cz.cacek.kerberos.kdc`
 
 [Apache Kerby](https://directory.apache.org/kerby/) allows to simply configure and run embedded KDC.
 
-See [KerbyServerMain.java](src/main/java/cz/cacek/kerberos/kdc/KerbyServerMain.java). When it's launched it regenerates [krb5.conf](krb5.conf) file and also the `service.keytab` if necessary. 
+See [KerbyServerMain.java](src/main/java/cz/cacek/kerberos/kdc/KerbyServerMain.java). When it's launched it regenerates [krb5.conf](krb5.conf) file and also creates the `service.keytab` if necessary. 
 
 ## JAAS authentication - Krb5LoginModule
 
