@@ -30,9 +30,9 @@ The `InitiatorAuthenticationMain` needs KDC server running as it asks for TGT fr
 
 Package: `cz.cacek.kerberos.hazelcast`
 
-This demo shows how to simply use standard API and plug-in Kerberos Single-sign-on.
+This demo shows how to simply use standard API and plug Kerberos Single-sign-on into a JAAS-enabled application.
 
-[Hazelcast IMDG](https://hazelcast.org/) (in-memory data grid) doesn't support Kerberos authentication in 4.0-BETA-2 version, but it does support JAAS authentication in its Enterprise edition. 
+[Hazelcast IMDG](https://hazelcast.org/) is an open-source in-memory data grid. One of its most typical use-cases is a distributed cache. Hazelcast Enterprise is a paid version which adds several important features (off-heap memory, security, hot restart, ...). Hazelcast Enterprise doesn't support Kerberos authentication (in 4.0-BETA-2 version), but it does support JAAS authentication.
 
 The demo introduces a simple login module [GssApiLoginModule](src/main/java/cz/cacek/kerberos/hazelcast/GssApiLoginModule.java) which uses the GSS-API to accept Kerberos tokens.
 
