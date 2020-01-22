@@ -34,7 +34,7 @@ This demo shows how to simply use standard API and plug Kerberos Single-sign-on 
 
 [Hazelcast IMDG](https://hazelcast.org/) is an open-source in-memory data grid. One of its most typical use-cases is a distributed cache. Hazelcast Enterprise is a paid version which adds several important features (off-heap memory, security, hot restart, ...). Hazelcast Enterprise doesn't support Kerberos authentication (in 4.0-BETA-2 version), but it does support JAAS authentication.
 
-The demo introduces a simple login module [GssApiLoginModule](src/main/java/cz/cacek/kerberos/hazelcast/GssApiLoginModule.java) which uses the GSS-API to accept Kerberos tokens.
+The demo introduces a simple login module [GssApiLoginModule](src/main/java/cz/cacek/kerberos/hazelcast/GssApiLoginModule.java) which uses the GSS-API to accept Kerberos tokens. When the authentication passes, it fills JAAS Subject with `Principal` types required by Hazelcast.
 
 The new login module is configured on Hazelcast servers (members) to authenticate client connections. See [HazelcastServerMain](src/main/java/cz/cacek/kerberos/hazelcast/HazelcastServerMain.java).
 
