@@ -6,12 +6,16 @@ import javax.security.auth.callback.NameCallback;
 import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 
+/**
+ * Simple {@link CallbackHandler} implementation which holds name and password and fills them into {@link NameCallback} and
+ * {@link PasswordCallback}.
+ */
 public class NamePasswordCbHandler implements CallbackHandler {
     private transient String name;
     private transient char[] password;
 
-    public NamePasswordCbHandler(String username, char[] password) {
-        this.name = username;
+    public NamePasswordCbHandler(String name, char[] password) {
+        this.name = name;
         this.password = password;
     }
 

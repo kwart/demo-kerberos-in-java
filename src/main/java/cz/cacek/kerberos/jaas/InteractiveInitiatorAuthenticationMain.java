@@ -9,7 +9,10 @@ import javax.security.auth.login.LoginContext;
 import org.apache.kerby.asn1.Asn1;
 
 /**
- * KDC has to be running for this authentication. KerberosTicket is available in the JAAS Subject after authentication. 
+ * This demo application shows client authentication in Kerberos by providing name and password. KerberosTicket (TGT) is
+ * available in the JAAS Subject after authentication.
+ * <p>
+ * KDC has to be available/reachable for the authentication.
  */
 public class InteractiveInitiatorAuthenticationMain {
 

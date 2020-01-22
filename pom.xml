@@ -18,6 +18,7 @@
         <version.junit>4.12</version.junit>
 
         <version.kerby>2.0.0</version.kerby>
+        <version.hazelcast>4.0-BETA-2</version.hazelcast>
     </properties>
 
     <build>
@@ -55,10 +56,26 @@
             <version>${version.kerby}</version>
         </dependency>
         <dependency>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-enterprise</artifactId>
+            <version>${version.hazelcast}</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>Hazelcast Private Snapshot Repository</id>
+            <url>https://repository.hazelcast.com/snapshot/</url>
+        </repository>
+        <repository>
+            <id>Hazelcast Private Release Repository</id>
+            <url>https://repository.hazelcast.com/release/</url>
+        </repository>
+    </repositories>
 </project>

@@ -4,7 +4,8 @@ import javax.security.auth.Subject;
 import javax.security.auth.login.LoginContext;
 
 /**
- * Authentication which uses Krb5LoginModule in non-interactive mode. Keytab and principal options are defined in jaas.conf.
+ * Acceptor authentication which uses Krb5LoginModule in non-interactive mode. Keytab and principal options are defined in jaas.conf.
+ * <p>
  * KDC doesn't need to be available/reachable for the acceptor's authentication.
  */
 public class AcceptorAuthenticationMain {

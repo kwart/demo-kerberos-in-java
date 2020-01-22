@@ -1,5 +1,6 @@
 package cz.cacek.kerberos.kdc;
 
+import static java.util.Arrays.asList;
 import static org.apache.kerby.kerberos.kerb.server.KdcConfigKey.PREAUTH_REQUIRED;
 
 import java.io.File;
@@ -19,19 +20,20 @@ public class KerbyServerMain {
         kdc.setKdcHost("localhost");
         kdc.setKdcRealm("TEST.REALM");
         kdc.setKdcPort(10088);
+        kdc.setAllowUdp(false);
         kdc.getKdcConfig().setBoolean(PREAUTH_REQUIRED, false);
         kdc.init();
 
         kdc.createPrincipal("jduke", "theduke");
         kdc.createPrincipal("hnelson", "secret");
-        kdc.createPrincipal("HTTP/localhost", "SpN-eGo");
         kdc.createPrincipal("gsstest/localhost", "servicePassword");
+        kdc.createPrincipal("hazelcast/localhost", "s1ml3+FAST");
 
         // export service principal's keytab
         File keytabFile = new File("service.keytab");
         if (!keytabFile.exists()) {
             kdc.getKadmin().exportKeytab(keytabFile, 
-                    Arrays.asList("HTTP/localhost@TEST.REALM", "gsstest/localhost@TEST.REALM"));
+                    asList("gsstest/localhost@TEST.REALM", "hazelcast/localhost@TEST.REALM"));
         }
 
         kdc.start();

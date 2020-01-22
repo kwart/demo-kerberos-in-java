@@ -1,5 +1,6 @@
 package cz.cacek.kerberos.jgss;
 
+import static cz.cacek.kerberos.Krb5Constants.KRB5_OID;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import java.io.DataInputStream;
@@ -15,7 +16,6 @@ import org.ietf.jgss.GSSException;
 import org.ietf.jgss.GSSManager;
 import org.ietf.jgss.GSSName;
 import org.ietf.jgss.MessageProp;
-import org.ietf.jgss.Oid;
 
 import cz.cacek.kerberos.jaas.NamePasswordCbHandler;
 
@@ -23,15 +23,6 @@ import cz.cacek.kerberos.jaas.NamePasswordCbHandler;
  * A client for {@link GSSTestServer}.
  */
 public class GSSTestClient implements PrivilegedExceptionAction<String> {
-
-    private final static Oid KRB5_OID;
-    static {
-        try {
-            KRB5_OID = new Oid("1.2.840.113554.1.2.2");
-        } catch (GSSException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     public static void main(String[] args) throws Exception {
         // System.setProperty("sun.security.krb5.debug", "true");
