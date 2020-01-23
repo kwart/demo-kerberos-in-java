@@ -22,7 +22,6 @@ public class HazelcastServerMain {
     public static void main(String[] args) throws LoginException {
         System.setProperty("java.security.auth.login.config", "jaas.conf");
         System.setProperty("java.security.krb5.conf", "krb5.conf");
-        System.setProperty("javax.security.auth.useSubjectCredsOnly", "false");
 
         // Create config and set the evaluation license key
         Config config = new Config().setLicenseKey(
